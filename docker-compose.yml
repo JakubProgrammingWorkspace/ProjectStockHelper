@@ -105,8 +105,7 @@ services:
       - .:/app
     environment:
       - CI=true
-    command: >
-      bash -c " cd frontend && npm install && npx playwright test "
+    command: bash /app/frontend/e2e/run-e2e.sh
     depends_on:
       web:
         condition: service_started
