@@ -1,0 +1,32 @@
+{
+  "name": "StockHelper Dev",
+  "dockerComposeFile": "../docker-compose.yml",
+  "service": "web",
+  "workspaceFolder": "/app",
+  "shutdownAction": "none",
+  "remoteUser": "appuser",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.pylance",
+        "ms-python.vscode-pylance"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/app/.venv/bin/python",
+        "python.analysis.extraPaths": ["/app"],
+        "python.analysis.typeCheckingMode": "basic",
+        "python.analysis.autoImportCompletions": true,
+        "python.analysis.diagnosticMode": "workspace",
+        "python.analysis.useLibraryCodeForTypes": true,
+        "[python]": {
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+          }
+        }
+      }
+    }
+  }
+}

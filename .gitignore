@@ -1,0 +1,29 @@
+.vscode/
+.idea/
+.env
+.env.bak
+.cache/
+.ruff_cache/
+.venv/
+
+.DS_Store
+__pycache__/
+*.pyc
+*.log
+
+# Testing
+.coverage
+htmlcov/
+coverage.xml
+test-results/
+.pytest_cache/
+
+# Node / Frontend
+node_modules/
+frontend/node_modules/
+frontend/build/
+frontend/test-results/
+frontend/playwright-report/
+frontend/blob-report/
+# Source maps are not needed in the committed build output
+static/assets/*.map

@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Frontend
+frontend/node_modules/
+
+# IDE
+.idea
+.vscode
+.aider*
+
+# UV & Docker
+.cache/
+.dockerignore
+Dockerfile
+docker-compose*.yml
+
+# Django
+media/
+
+# Git
+.git
+.gitignore
+
+# project
+docs/ 

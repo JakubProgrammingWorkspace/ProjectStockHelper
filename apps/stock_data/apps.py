@@ -1,0 +1,7 @@
+from django.apps import AppConfig
+
+
+class StockDataConfig(AppConfig):
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "apps.stock_data"
+    verbose_name = "Stock Data"

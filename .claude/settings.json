@@ -1,0 +1,37 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "Bash(npm run *)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(cat:*)",
+      "Bash(ls:*)"
+    ],
+    "deny": [
+      "Read(./.venv/**)",
+      "Read(./frontend/node_modules/**)",
+      "Read(./frontend/build/**)",
+      "Read(./.env)",
+      "Read(./**/__pycache__/**)",
+      "Read(./**/.pytest_cache/**)",
+      "Read(**/secrets/*)",
+      "Read(**/*credential*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '.tool_input.command' | grep -qE 'rm -rf|sudo|:\\(\\)\\{' && { echo 'Dangerous command blocked' >&2; exit 2; } || exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}
